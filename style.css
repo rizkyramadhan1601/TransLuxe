@@ -1,0 +1,1692 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #332820;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Konten popup */
+.popup {
+  background: white;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 500px;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideDownFade 0.6s ease-out forwards;
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Tombol close */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px); /* mulai lebih tinggi */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* posisi tengah */
+  }
+}
+
+
+
+
+
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+.con-login-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  width: 100%;
+}
+.con-regis-auth {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  width: 100%;
+  min-height: 100vh;
+}
+.con-hero-img-login {
+  display: flex;
+  background-image: url(./assets/rosin-pic/bg/armada-terbaik.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25%;
+  width: 35%;
+  min-height: 80vh;
+  border-radius: 20px 0px 0px 20px;
+}
+.con-hero-img-regis {
+  display: flex;
+  background-image: url(./assets/rosin-pic/bg/standar-kenyamanan.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25%;
+  width: 35%;
+  min-height: 80vh;
+  border-radius: 0px 20px 20px 0px;
+}
+.con-form-auth {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  min-height: 80vh;
+  width: 50%;
+  border-radius: 0px 20px 20px 0px;
+  padding: 15px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+.con-form-auth2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  min-height: 80vh;
+  width: 50%;
+  border-radius: 20px 0px 0px 20px;
+  padding: 15px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-pilih-auth2.masuk {
+  align-self: end;
+}
+
+.btn-pilih-auth,
+.btn-pilih-auth2 {
+  margin-top: 5vh;
+  font-size: 1.8rem;
+  color: #332820;
+  font-weight: 800;
+  text-decoration: none;
+  margin-bottom: 5vh;
+}
+.arrow-auth1 {
+  width: 55px;
+  height: auto;
+}
+.arrow-auth2 {
+  width: 55px;
+  height: auto;
+  rotate: 180deg;
+}
+.title-text-type-auth {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.welcome-textAuth {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.bg-light.text-dark.p-4.rounded.shadow {
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+}
+.btn.btn-primary {
+  width: max-content !important;
+  align-self: flex-end !important;
+  background-color: #332820;
+  border: none;
+}
+.btn.btn-primary:hover {
+  background-color: white;
+  color: #332820;
+  border: 2px solid #332820;
+  font-weight: 600;
+}
+/* WRAPPER */
+.form-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.login-form {
+  transform: translateX(0%);
+  background: #f0f0f0;
+}
+
+.register-form {
+  transform: translateX(-100%);
+  background: #ffffff;
+}
+
+.form-wrapper.active {
+  transform: translateX(0%);
+}
+
+.login-form.hide {
+  transform: translateX(100%);
+}
+
+.register-form.show {
+  transform: translateX(0%);
+}
+
+/* BATAS PAGE(DASHBOARD PAGE) */
+/* Header */
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  padding: 20px;
+  background-color: #332820;
+  justify-content: space-between;
+  z-index: 10000;
+}
+.logo {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.logo-img {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+.nav-items {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  gap: 15px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.nav-items:hover {
+  color: #ff8934;
+  transform: translateY(-2px);
+}
+.btn.btn-outline-primary {
+  border: #ffffff 1px solid;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn.btn-outline-primary:hover {
+  color: #332820;
+  transform: translateY(-4px);
+  background-color: white;
+}
+
+/* BATAS SECTION(HOME SECTION) */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  width: 100%;
+  min-height: 70vh;
+  padding-top: 9vh;
+}
+.hero-con-home {
+  background-image: url(./assets/rosin-pic/bg/awak-bus-ri.webp);
+  background-position: center 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 75%;
+  min-height: 50vh;
+  filter: brightness(75%);
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  color: white;
+}
+.welcome-title-home {
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 0;
+}
+.hero-name {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin: 0;
+}
+.hero-txt-home {
+  margin: 0;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* BATAS SECTION */
+#tiket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  background-color: #f7f7f7;
+}
+/* TITLE TIKET */
+.con-pesan-tiket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+  background-color: #ffffff;
+  border-radius: 0px 20px 20px 20px;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+}
+.con-title-tiket {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  background-color: #332820;
+  align-items: center;
+  padding: 5px;
+  margin: 0;
+  align-self: start;
+  padding-inline: 30px;
+  border-radius: 20px 20px 0px 0px;
+}
+.tiket-logo {
+  width: 50px;
+  height: auto;
+}
+.title-tiket {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+/* ASAL TUJUAN */
+.con-form-tiketasaltujuan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 0px 20px 0px 0px;
+}
+.con-asal-tujuan {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-radius: 10px;
+  height: 7vh;
+  background-color: #f4f4f4;
+  padding: 5px;
+}
+.con-txt-form-asal-tujuan {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.asal-tujuan-icon {
+  width: 50px;
+  height: auto;
+}
+.asal-tujuan-txt1,
+.asal-tujuan-txt2 {
+  margin: 0;
+  padding: 0;
+  color: #332820;
+  font-weight: 600;
+}
+.asal-tujuan-txt1 {
+  font-size: 1rem;
+}
+.asal-tujuan-txt2 {
+  font-size: 1.3rem;
+}
+/* TANGGAL,KURSI,ARMADA,CARI */
+.con-form-tiketBawah {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px;
+  margin-top: 3vh;
+}
+.con-all-content-conTiket {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.con-tgl,
+.con-kursi,
+.con-armada,
+.con-cari {
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 5px;
+}
+.con-input-con-tiketbawah {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  margin-left: 5px;
+}
+.title-txt-con-tiketbawah {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+.icon-con-tiketbawah {
+  width: 40px;
+  height: auto;
+}
+.input.form-control[type="date"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.btn-cari-tiket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 25%;
+  height: 8vh;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #332820;
+  background-color: #f4f4f4;
+  border: 2px solid #332820;
+  border-radius: 10px;
+  padding: 5px;
+  gap: 10px;
+}
+
+/* BATAS PAGE(DASHBOARD PAGE) */
+/* EXPERIENCE */
+#experience {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+  align-items: center;
+}
+.con-heroTxt-exp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.title-exp {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.hero-text-exp {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.con-swipper-exp {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  width: 80%;
+  height: 60vh;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  gap: 40px;
+  scrollbar-width: none;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-block: 10px;
+}
+.card-exp {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  justify-content: end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-exp:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+.con-title-card-exp {
+  margin-bottom: 50px;
+  padding-left: 15px;
+}
+.title-exp-card {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.card-exp.first,
+.card-exp.second,
+.card-exp.third,
+.card-exp.fourth,
+.card-exp.fifth,
+.card-exp.sixth {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  filter: brightness(75%);
+  text-decoration: none;
+}
+.card-exp.first {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-awakbus.webp);
+}
+.card-exp.second {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-riplus.webp);
+}
+.card-exp.third {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-armada.webp);
+}
+.card-exp.fourth {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-makan.webp);
+}
+.card-exp.fifth {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-agen.webp);
+}
+.card-exp.sixth {
+  background-image: url(./assets/rosin-pic/experience/exp-cont/experience-ticketing.webp);
+}
+.dot {
+  width: 50px;
+  height: auto;
+}
+
+/* BATAS SECTION */
+
+#armada {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  min-height: 80vh;
+  background-image: url(./assets/rosin-pic/bg/armada.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(80%);
+}
+.con-hero-armada {
+  display: flex;
+  border-radius: 20px;
+  padding: 15px;
+  margin-left: 150px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  min-height: 40vh;
+  width: 45%;
+  padding-top: 50px;
+}
+.title-hero-armada {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: white;
+  margin-left: 50px;
+}
+.txt-hero-armada {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: white;
+  margin-left: 50px;
+}
+.con-jumlah-armada {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  min-height: 10vh;
+  align-self: center;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.con-daftar-jumlah-armada {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: 10vh;
+  border-right: 1px solid white;
+  align-items: center;
+  justify-content: center;
+}
+.title-jumlah-armada {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+}
+.jumlah-armada {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+}
+.btn-lihat-armada {
+  background-color: #ff7300;
+  padding: 5px;
+  padding-inline: 10px;
+  border-radius: 20px;
+  width: max-content;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  align-self: end;
+  margin-top: 30px;
+  margin-right: 40px;
+}
+
+/* BATAS PAGE(DASHBOARD PAGE) */
+/* FOOTER */
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #332820;
+  min-height: max-content;
+}
+.con-hero-footer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  min-height: 30vh;
+  margin-top: 20px;
+  border-bottom: 1px solid white;
+}
+.con-img-footer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+.riLogo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.transluxe-logo {
+  width: 300px;
+  height: auto;
+}
+.con-list-footer {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+}
+.con-list1-foot,
+.con-list2-foot {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 30vh;
+  padding: 10px;
+  justify-content: center;
+}
+.list-link {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+.con-paymentIMG {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+.qris-img {
+  width: 120px;
+  height: auto;
+}
+.con-alamat-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  padding: 20px;
+  min-height: 10vh;
+}
+.name-company {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+.alamat {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+}
+.con-copyright {
+  min-height: 8vh;
+  background-color: #2a211b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.copyright-text {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* BATAS PAGE */
+/* EXPERIENCE PAGES */
+.hero-sec-exp {
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: end;
+}
+#exp1 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-awakbus.webp);
+}
+.con-title-hero-exp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15vh;
+  padding-left: 30vh;
+}
+.title-exp-pages {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.sec-content-exp {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.con-title-exp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin-top: 10vh;
+}
+.con-content-text-exp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+}
+.name-exp-pages {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.txt-content-exp {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+.other-exp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 80vh;
+  padding: 20px;
+  align-items: center;
+}
+.con-title-other-exp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  min-height: 5vh;
+}
+.title-other-exp {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+/* BATAS SECTION PAGE */
+#exp2 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-riplus.webp);
+}
+
+#exp3 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-armada.webp);
+}
+#exp4 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-makan.webp);
+}
+#exp5 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-agen.webp);
+}
+#exp6 {
+  background-image: url(./assets/rosin-pic/experience/header-experience-ticketing.webp);
+}
+
+/* BATAS PAGES */
+/* ARMADA PAGES */
+#double-decker-sec,
+#shd-sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  align-items: center;
+}
+.con-name-armada {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 15vh;
+  justify-content: center;
+}
+.name-armada {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+}
+.con-img-armada {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+}
+.armada-dd {
+  width: 100%;
+  height: auto;
+}
+.con-kelas-armada {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: center;
+  min-height: 10vh;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+}
+.btn-kelas-armada {
+  background-color: white;
+  border: 2px solid #332820;
+  border-radius: 15px;
+  padding: 10px;
+  padding-inline: 30px;
+  text-decoration: none;
+  color: #332820;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.title-kelas {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* BATAS SECTION PAGES NEW PAGES */
+/* FASILITAS PAGE */
+.interior-sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+.hero-con-interior {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15vh;
+  min-height: 80vh;
+}
+.con-title-name-armada {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.con-img-interior {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 30px;
+}
+.interior{
+  border-radius: 20px;
+}
+.fasilitas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh;
+  background-color: #f7f7f7;
+}
+.con-title-fasilitas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+}
+.title-fasilias {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.con-fasilitas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+  align-items: center;
+  margin-top: 20px;
+}
+.col-auto.d-flex.flex-wrap.justify-content-center {
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+.facility-box.bg-light.border.rounded {
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+  border-radius: 15px !important;
+}
+.icon-fasilitas {
+  width: 60px;
+  height: auto;
+  margin: 0;
+}
+.name-fasilitas {
+  margin: 0;
+  font-weight: 700 !important;
+}
+.denah-kursi{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  background-color: #ffffff;
+}
+.con-titledenah{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin-top: 5vh;
+  align-items: center;
+}
+.title-denah{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+.con-img-denah{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  width: 90%;
+  margin-top: 5vh;
+}
+.denahkursi{
+  width: 500px;
+  height: auto;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* BATAS SECTION PAGE */
+/* ABOUT PAGES */
+#about{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50vh;
+  padding: 20px;
+  gap: 20px;
+  background-color: #f7f7f7;
+}
+.con-hero-text-about{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-height: 35vh;
+}
+.con-hero-img-about{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 35vh;
+  background-image: url(./assets/rosin-pic/bg/header-perusahaan.webp);
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  content: " ";
+}
+.title-about{
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2vh;
+}
+.text-about{
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* BATAS SECTION */
+#esensi{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 65vh;
+}
+.con-title-esensi{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.title-esensi{
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0;
+}
+.con-hero-esensi{
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.con-5k,
+.con-5s{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  background-color: #F74009;
+  min-height: 40vh;
+  border-radius: 30px;
+}
+.title5k,
+.title5s{
+  font-weight: 700;
+  font-size: 5rem;
+  margin: 0;
+  color: white;
+}
+.txt5k,
+.txt5s{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: white;
+}
+.con-content-5k,
+.con-content-5s{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  margin-block: 1rem;
+}
+.btn-off-5k,
+.btn-off-5s{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F74009;
+  border: 2px solid white;
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+}
+.txt-btn-off-5k,
+.txt-btn-off-5s{
+  margin: 0;
+  color: white;
+  font-weight: 500;
+}
+
+/* BATAS SECTION */
+#visimisi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  gap: 2rem;
+  background-color: #f7f7f7;
+  min-height: 70vh;
+  padding-top: 10vh;
+}
+.con-visi,
+.con-misi{
+  width: 70%;
+  min-height: 20vh;
+  align-items: center;
+  text-align: center;
+}
+.title-visi,
+.title-misi{
+  font-weight: 700;
+  font-size: 3rem;
+}
+.txt-visi,
+.txt-misi{
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.daftarmisi{
+  text-align: start;
+}
+.misi{
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+#nilai-perusahaan{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  gap: 2rem;
+  min-height: 100vh;
+  padding-top: 10vh;
+  background-color: #ffffff;
+}
+.con-title-txt{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.title-nilai{
+  font-size: 3rem;
+  font-weight: 700;
+}
+.txt-hero-nilai{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.con-grid-nilai{
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.item-nilai{
+  background: #f7f7f7;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  min-height: 25vh;
+}
+.titlenilai{
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.txt-nilai{
+  font-weight: 500;
+}
+
+
+/* BATAS SECTION PAGES */
+/* CARI TIKET PAGE */
+#hero-sec-caritiket{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 70vh;
+  background-color: #f7f7f7;
+}
+.hero-con-caritiket{
+  display: flex;
+  border-radius: 40px;
+  flex-direction: column;
+  margin-top: 10vh;
+  width: 70%;
+  min-height: 50vh;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: " ";
+  background-image: url(./assets/rosin-pic/bg/header-reservasi.webp);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+#tampiltiket{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 40vh;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+.con-tiketdicari{
+  display: flex;
+  width: 70%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+  min-height: 20vh;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.title-tiket-dicari{
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.con-data-tiket{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 8vh;
+}
+.con-btn-pilihulang{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  text-align: end;
+  align-items: center;
+  justify-content: end;
+  height: 5vh;
+}
+.btn-pilih-ulang{
+  text-decoration: none;
+  color: white;
+  background-color: #2a211b;
+  padding: 10px;
+  border-radius: 20px;
+  padding-inline: 30px;
+}
+.con-fromto,
+.con-datetravel,
+.con-jumlah-kursi-dipesan{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.tujuan-ke{
+  width: 40px;
+  height: 40px;
+}
+.from,
+.to,
+.date-travel,
+.jumlah-kursi{
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+  margin-inline: 15px;
+}
+#pilihtiket{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f7f7f7;
+  min-height: 50vh;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+.con-tiket{
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+  background-color: #ffffff;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+  min-height: 30vh;
+  gap: 10px;
+  border-radius: 20px;
+  justify-content: center;
+}
+.con-ket-but,
+.con-btn-pilih{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 50px;
+}
+.bus-class{
+  font-weight: 700;
+  font-size: 2rem;
+}
+.no-bus{
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.btn-pilih-tiket{
+  background-color: #ff7300;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  padding-inline: 30px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+.con-ket-tiket{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+  padding: 20px;
+  gap: 10px;
+  justify-content: center;
+}
+.con-departtime,
+.con-arrivedtime{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 10vh;
+}
+.departtime,
+.asal,
+.tempatnaik,
+.arrive,
+.tujuan,
+.tempatturun{
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.panahtujuan{
+  width: 80px;
+  height: 80px;
+}
+
+
+/* BATAS */
+#hero-reservasi{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url(./assets/rosin-pic/bg/header-reservasi-2.webp);
+  min-height: 50vh;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+#tiketanda{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f7f7f7;
+  min-height: 50vh;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+.con-tiketanda{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  min-height: 40vh;
+  border-radius: 20px;
+  justify-content: center;
+}
+.con-ket-tiketanda{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  min-height: 15vh !important;
+  background-color: #ff7300;
+  justify-content: center;
+  padding-left: 3rem;
+  color: white;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+
+}
+.kodebus{
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+  border-radius: 20px;
+  border: 2px solid white;
+  max-width: max-content;
+  padding-inline: 30px;
+  color: white;
+}
+.con-time-tiketanda{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  min-height: 15vh !important;
+  background-color: #ffffff;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 3rem;
+  border-radius: 0px 0px 20px 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#form-data-penumpang{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 60vh;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+.con-hero-data-penumpang{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.title-dp{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.con-title-dp{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 60%;
+}
+.form-data-penumpang{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 6vh;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+}
+.con-title-form{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-bottom: 1px solid black;
+  margin-left: 2rem;
+}
+.title-form{
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+.con-form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 90%;
+  min-height: 30vh;
+}
+#namalengkap{
+  width: 70% !important;
+}
+.form-data2{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  gap: 10px;
+} 
+#btn-payment{
+  align-self: end !important;
+  margin-right: 15rem;
+  background-color: #2a211b;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#btn-payment:hover{
+  background-color: white !important;
+  color: #2a211b !important;
+  border: 2px solid #2a211b;
+  transform: translateY(-5px);
+}
+.btn.btn-warning.fw-bold.px-4.py-2.rounded-3.text-white{
+  transition: transform 0.3s ease, box-shadow 0.3s 
+}
+.btn.btn-warning.fw-bold.px-4.py-2.rounded-3.text-white:hover{
+  color: #ff7300 !important;
+  background-color: white !important;
+  border: 2px solid #ff7300 !important;
+    transform: translateY(-5px);
+}
+#btn-payment:hover{
+  border: #000000 1px solid !important; 
+}
+
+
+
+
+/* BATAS PAGES */
+/* FINAL TIKET PAGE */
+#tiket-section-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(./assets/rosin-pic/bg/header-reservasi-2.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  filter: brightness(80%);
+}
+.con-struk-tiket{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  min-height: 70vh;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  margin-top: 10vh;
+  padding-top: 3rem;
+}
+.con-ricianharga{
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+}
+.con-namerinci,
+.con-txt-total{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  padding-left: 5rem;
+}
+.con-rinciprice,
+.con-price-total{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: end;
+  padding-right: 5rem;
+}
+.name-rinci,
+.price-rinci,
+.txt-total,
+.txt-price-total{
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.con-totalharga{
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border-top: 3px black solid;
+}
+.txt-pembayaran{
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.qris-imgtiket{
+  width: 15%;
+  height: auto;
+}
+.con-btn-tiket-final{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+  min-height: 5vh;
+  gap: 15px;
+}
+.btn-go-home,
+.btn-downloadpdf{
+  background-color: #ff7300;
+  padding: 10px;
+  padding-inline: 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}

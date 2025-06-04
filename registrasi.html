@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description" content="Transluxe adalah sebuah website pemesanan tiket bus serta agen resmi Rosalia Indah">
+    <meta name="keywords" content="Login Transluxe Official, Rosalia Indah, Daftar Transluxe">
+    <meta name="author" content="Transluxe Official">
+    <!-- ICON -->
+    <link rel="icon" href="./assets/Logo-Transluxe.webp" type="image/x-icon">
+    <!-- FONT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login/Registrasi TransLuxe</title>
+</head>
+<body>
+  <section id="login-page">
+      <!-- FORM LOGIN -->
+      <div class="form-wrapper login-form active">
+        <div class="con-login-auth">
+          <div class="con-hero-img-login">
+
+          </div>
+          <div class="con-form-auth">
+            <a href="#" class="btn-pilih-auth">Daftar <img src="./assets/icons/Arrow.svg" alt="Daftar Akun Transluxe" class="arrow-auth1"></a>
+            <h1 class="title-text-type-auth">
+              Masuk 
+            </h1>
+            <p class="welcome-textAuth">Selamat Datang Kembali Di TransLuxe <br>  Silahkan Login Untuk Melanjutkan</p>
+            <form action="login.php" method="POST" class="bg-light text-dark p-4 rounded shadow">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+                <a href="./index.html" type="submit" class="btn btn-primary">Login</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    <!-- FORM REGINTRASI -->
+     <div class="form-wrapper register-form">
+        <div class="con-regis-auth">
+          <div class="con-hero-img-regis">
+
+          </div>
+          <div class="con-form-auth2">
+            <a href="#" class="btn-pilih-auth2 masuk"><img src="./assets/icons/Arrow.svg" alt="Daftar Akun Transluxe" class="arrow-auth2">Masuk</a>
+            <h1 class="title-text-type-auth">
+              Daftar 
+            </h1>
+            <p class="welcome-textAuth">Selamat Datang Pengguna Baru Silahkan Daftar <br>Untuk  melanjutkan</p>
+            <form action="login.php" method="POST" class="bg-light text-dark p-4 rounded shadow">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <a href="./index.html" type="submit" class="btn btn-primary">Daftar</a>
+              </form>
+          </div>
+        </div>
+    </div>
+  </section>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

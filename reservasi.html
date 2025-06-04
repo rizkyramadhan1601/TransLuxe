@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description" content="Transluxe adalah sebuah website pemesanan tiket bus serta agen resmi Rosalia Indah">
+    <meta name="keywords" content="Tiket bus, tiket bus transluxe, cari tiket bus">
+    <meta name="author" content="Transluxe Official">
+    <!-- ICON -->
+    <link rel="icon" href="./assets/Logo-Transluxe.webp" type="image/x-icon">
+    <!-- FONT -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Reservasi Transluxe</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html" class="logo"><img src="./assets/Logo-Transluxe.webp" alt="Logo Transluxe" class="logo-img">TransLuxe</a>
+        </div>
+        <nav>
+            <a href="./index.html" class="nav-items">Home</a>
+            <a href="./index.html#tiket" class="nav-items">Pesan Tiket</a>
+            <a href="./index.html#experience" class="nav-items">Rosa Experience</a>
+            <a href="./index.html#armada" class="nav-items">Kelas Armada</a>
+            <a href="#" class="nav-items">Cetak Tiket</a>
+        </nav>
+        <a href="./registrasi.html" class="btn btn-outline-primary">Masuk/Daftar</a>
+    </header>
+
+    <section id="hero-reservasi">
+    </section>
+    <section id="tiketanda">
+        <div class="con-tiketanda">
+            <div class="con-ket-tiketanda">
+                <h1 class="bus-class">First Class DD</h1>
+                <div class="kodebus">RI0116</div>
+            </div>
+            <div class="con-time-tiketanda">
+                <div class="con-departtime">
+                    <p class="departtime">00:00</p>
+                    <p class="asal">Serang</p>
+                    <p class="tempatnaik">Pakupatan</p>
+                </div>
+                <div class="con-arrivedtime">
+                    <p class="arrive">00:00</p>
+                    <p class="tujuan">Yogyakarta</p>
+                    <p class="tempatturun">Prambanan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="form-data-penumpang">
+        <div class="con-hero-data-penumpang">
+            <div class="con-title-dp">
+                <h1 class="title-dp">Data Penumpang</h1>
+            </div>
+            <div class="form-data-penumpang">
+                <div class="con-title-form">
+                    <p class="title-form">Info Pemesanan</p>
+                </div>
+                <div class="con-form">
+                    <form>
+                        <!-- Nama Lengkap -->
+                        <div class="mb-3">
+                            <label for="namaLengkap" class="form-label fw-semibold">Nama Lengkap</label>
+                            <input type="text" class="form-control rounded-3 border-dark" id="namaLengkap" placeholder="Masukkan nama Anda">
+                        </div>
+
+                        <!-- Nomor Telepon & Email -->
+                        <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="telepon" class="form-label fw-semibold">Nomor Telepon</label>
+                            <input type="text" class="form-control rounded-3 border-dark" id="telepon" placeholder="08xxxxxxxxxx">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control rounded-3 border-dark" id="email" placeholder="nama@email.com">
+                        </div>
+                        </div>
+
+                        <!-- Pilih Kursi + Tombol Denah + Harga -->
+                        <div class="row align-items-end">
+                        <div class="col-md-4 mb-3" id="kursi">
+                            <label for="kursi" class="form-label fw-semibold">Pilih Kursi Yang Tersedia</label>
+                            <select class="form-select rounded-3 border-dark" id="kursi">
+                            <option selected disabled>Pilih kursi</option>
+                            <option>A1</option>
+                            <option>A2</option>
+                            <option>A3</option>
+                            <option>A4</option>
+                            <option>A5</option>
+                            <option>A6</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3" id="btn-denahkursi">
+                            <button  type="button" class="btn btn-warning fw-bold px-4 py-2 rounded-3 text-white" id="denah" style="background-color: #f26b0f; border: #ff7300;">Denah Kursi
+                            </button>
+                        </div>
+                        <div class="col-md-4 mb-3 fw-bold">
+                            Rp.xxx.xxx
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3" id="btn">
+
+            </div>
+                <a href="./final-tiket-page.html" type="button" class="btn btn-warning fw-bold px-4 py-2 rounded-3 text-white" style="background-color: #332820;" id="btn-payment">Payment</a>
+        </div>
+    </section>
+
+      <section id="footer">
+        <div class="con-hero-footer">
+            <div class="con-img-footer">
+                <img src="./assets/other/logo-w.webp" alt="" class="riLogo">
+                <img src="./assets/logo-horizontal.webp" alt="" class="transluxe-logo">
+            </div>
+            <div class="con-list-footer">
+                <div class="con-list1-foot">
+                    <a href="./index.html#tiket" class="list-link">Booking Online</a>
+                    <a href="./index.html#experience" class="list-link">Rosa Experience</a>
+                    <a href="./index.html#armada" class="list-link">Rosa Transport</a>
+                </div>
+                <div class="con-list2-foot">
+                    <a href="./about-transluxe.html#about" class="list-link">About Us</a>
+                    <a href="./about-transluxe.html#esensi" class="list-link">Esensi Layanan Rosalia Indah</a>
+                    <a href="./about-transluxe.html#visimisi" class="list-link">Visi Misi TransLuxe</a>
+                    <a href="./about-transluxe.html#nilai-perusahaan" class="list-link">Nilai Perusahaan Rosalia Indah</a>
+                </div>
+            </div>
+            <div class="con-paymentIMG">
+                <img src="./assets/other/qris.webp" alt="pembayaran transluxe only qris" class="qris-img">
+            </div>
+        </div>
+        <div class="con-alamat-footer">
+            <h1 class="name-company">TransLuxe Official</h1>
+            <p class="alamat">Jl. Kampung Baru, Cipocok Jaya, Panancangan, Serang Sub-District, Panancangan, Kec. Cipocok Jaya, Kota Serang, Banten 42124</p>
+        </div>
+        <div class="con-copyright">
+            <p class="copyright-text"> &copy;Copyright 2025, TransLuxe Official, All rights reserved.</p>
+        </div>
+      </section>
+
+    </div>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
